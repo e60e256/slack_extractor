@@ -1,0 +1,756 @@
+{
+  "C06U9HWULHK": [
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195656.451729",
+      "client_msg_id": "12001b8e-8164-4026-88d7-52a9ed1743f9",
+      "text": "Only the legend tells his story",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "f0Oi/",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "Only the legend tells his story" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195638.293069",
+      "client_msg_id": "f297f846-7a49-498c-afb4-fb7e939a5234",
+      "text": "The symbol finally breaks down",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "SOADJ",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "The symbol finally breaks down" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195630.820599",
+      "client_msg_id": "49b881c2-04e0-463e-938a-5e9640a06a46",
+      "text": "He grows old to die",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "XpNfO",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "He grows old to die" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195623.442139",
+      "client_msg_id": "05df1b28-7443-4290-ba56-b408a5dad6ce",
+      "text": "The King praises him and build a symbol to perpetuate his achievement",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "egwMg",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "The King praises him and build a symbol to perpetuate his achievement"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195569.405989",
+      "client_msg_id": "88710f85-d865-4d1a-b771-915d3b260ffd",
+      "text": "He goes back to the castle",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "ojkxw",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "He goes back to the castle" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195564.071799",
+      "client_msg_id": "744e693f-c8da-41ec-aed0-f03bb8169fc5",
+      "text": "He kills the demon king",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "JcIiO",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "He kills the demon king" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195560.689159",
+      "client_msg_id": "4f078345-8ae7-4e7e-8604-92544de6bbf5",
+      "text": "He goes to the demon king's palace",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "LWJ+S",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "He goes to the demon king's palace" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195549.690639",
+      "client_msg_id": "de9ce3bc-b70e-4a04-9a9a-8d15aed8bc8c",
+      "text": "He gets the legend sword",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "E9Vl+",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "He gets the legend sword" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195541.295969",
+      "client_msg_id": "f2c0a108-75dc-4042-8a1d-537e5ddab857",
+      "text": "He beats the second dungeon",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "8QaXM",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "He beats the second dungeon" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195536.173539",
+      "client_msg_id": "15fae25b-08a1-4c09-92db-f21d98c4b94e",
+      "text": "He beats the first dungeon",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "J2Oyz",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "He beats the first dungeon" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195528.572599",
+      "client_msg_id": "5d9e6696-6fb2-4887-a571-2f7ce8753b42",
+      "text": "He kills slimes",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "QlTNG",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "He kills slimes" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195525.964749",
+      "client_msg_id": "0d9a42fa-3a7e-458d-aa04-90db6bc29fc8",
+      "text": "He buys potions",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "dfE37",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "He buys potions" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195519.912339",
+      "client_msg_id": "4ae63113-21e8-4c0e-9784-d1e2b4418a97",
+      "text": "The hero departs the castle",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "OsG1U",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                { "type": "text", "text": "The hero departs the castle" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195510.346339",
+      "client_msg_id": "8add9f5b-e087-4756-a6fe-c0163959c45f",
+      "text": "They are told to kill the demon king",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "yqbi1",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "They are told to kill the demon king"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195504.942139",
+      "client_msg_id": "36c6c96f-3ba9-495d-8333-ccc98a8f3041",
+      "text": "The hero is called by the King to the castle",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "wp/Zt",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "The hero is called by the King to the castle"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713195489.408939",
+      "client_msg_id": "efddf0e6-4642-4839-894a-7123e182bc5a",
+      "text": "The demon king is threating the kingdom",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "J70hq",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "The demon king is threating the kingdom"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subtype": "channel_join",
+      "user": "U06UB7PC4KU",
+      "text": "<@U06UB7PC4KU>さんがチャンネルに参加しました",
+      "type": "message",
+      "ts": "1713195466.178279"
+    }
+  ],
+  "C06UB7PDWCA": [
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713189097.850349",
+      "client_msg_id": "ca707a2a-bd7f-4644-bece-660e0f13b1de",
+      "text": "こんにちは",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "f0HCs",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "こんにちは" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subtype": "channel_join",
+      "user": "U06UB7PC4KU",
+      "text": "<@U06UB7PC4KU>さんがチャンネルに参加しました",
+      "type": "message",
+      "ts": "1713184766.523149"
+    }
+  ],
+  "C06UDMGHGDA": [
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713189666.795159",
+      "client_msg_id": "4c3e5bbb-f1bf-4839-b3de-346b5a597caa",
+      "text": "Test2",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "cmdpo",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "Test2" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713189436.704569",
+      "client_msg_id": "17247912-b51e-4d7f-a8c0-11d9a5672fd4",
+      "text": "やること\n• Slack API を試しにたたく (conversations.list) (test, Node.jsから)\n• Slack Export のコードを Node.js に変換して、Export を達成する\n• APIトークンを安全に保管する方法を調べる\n• 取得したデータをSQLを使って永続化して保存する\n• Docker化を考える\n• Webクライアントを作る",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "UPl61",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "やること\n" }]
+            },
+            {
+              "type": "rich_text_list",
+              "elements": [
+                {
+                  "type": "rich_text_section",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Slack API を試しにたたく (conversations.list) (test, Node.jsから)"
+                    }
+                  ]
+                },
+                {
+                  "type": "rich_text_section",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Slack Export のコードを Node.js に変換して、Export を達成する"
+                    }
+                  ]
+                },
+                {
+                  "type": "rich_text_section",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "APIトークンを安全に保管する方法を調べる"
+                    }
+                  ]
+                },
+                {
+                  "type": "rich_text_section",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "取得したデータをSQLを使って永続化して保存する"
+                    }
+                  ]
+                },
+                {
+                  "type": "rich_text_section",
+                  "elements": [{ "type": "text", "text": "Docker化を考える" }]
+                },
+                {
+                  "type": "rich_text_section",
+                  "elements": [
+                    { "type": "text", "text": "Webクライアントを作る" }
+                  ]
+                }
+              ],
+              "style": "bullet",
+              "indent": 0,
+              "border": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subtype": "channel_join",
+      "user": "U06UB7PC4KU",
+      "text": "<@U06UB7PC4KU>さんがチャンネルに参加しました",
+      "type": "message",
+      "ts": "1713184824.200469"
+    }
+  ],
+  "C06V01G1LAC": [
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191189.123199",
+      "client_msg_id": "f3fed26c-00e4-480d-88e2-f43ab00c15d1",
+      "text": "AAAA",
+      "team": "T06UDMBD51S",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "LCFlD",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "AAAA" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191066.806699",
+      "client_msg_id": "65b1d1be-af6b-46ca-bcb8-bd0df7936e7a",
+      "text": "Hi",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "reply_count": 9,
+      "reply_users_count": 1,
+      "latest_reply": "1713191184.656979",
+      "reply_users": ["U06UB7PC4KU"],
+      "is_locked": false,
+      "subscribed": true,
+      "last_read": "1713191184.656979",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "bnCY8",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "Hi" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191184.656979",
+      "client_msg_id": "21ed3e74-eb3e-4c89-bf3d-444cc6343f8c",
+      "text": "------",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "FYIQT",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "------" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191150.906119",
+      "client_msg_id": "c0e7f2ab-a23b-4e8c-94d9-b761ae932e32",
+      "text": "tty",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "O1LkQ",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "tty" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191142.271529",
+      "client_msg_id": "dc1bff46-4cfe-4a5e-a67b-a4add84de8ac",
+      "text": "port",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "ynbLF",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "port" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191137.889449",
+      "client_msg_id": "5dcb2e59-c7fc-4884-ab40-b87536b85f4e",
+      "text": "egp",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "NziFO",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "egp" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191105.818289",
+      "client_msg_id": "a935697d-82da-4b2b-8bc4-76b4dc73c46d",
+      "text": "terse",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "0cCqA",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "terse" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191100.391689",
+      "client_msg_id": "dffdd1ad-5ddf-4377-b016-517dd31fbcff",
+      "text": "gigabitethernet",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "lwKrh",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "gigabitethernet" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191086.940759",
+      "client_msg_id": "406d3460-1ae2-49c4-aa67-7077743ca21e",
+      "text": "ethernet-switching",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "N4T0U",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "ethernet-switching" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191076.650749",
+      "client_msg_id": "2a53e851-f140-4b39-be80-da082d515afd",
+      "text": "bridge",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "KCTBb",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "bridge" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "user": "U06UB7PC4KU",
+      "type": "message",
+      "ts": "1713191074.223899",
+      "client_msg_id": "927a60f4-5bdb-4bc3-89e8-12c3482c9373",
+      "text": "irb",
+      "team": "T06UDMBD51S",
+      "thread_ts": "1713191066.806699",
+      "parent_user_id": "U06UB7PC4KU",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "LEv3V",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "irb" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subtype": "channel_join",
+      "user": "U06UB7PC4KU",
+      "text": "<@U06UB7PC4KU>さんがチャンネルに参加しました",
+      "type": "message",
+      "ts": "1713184766.729569"
+    }
+  ]
+}

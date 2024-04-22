@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slack Data Fetcher</title>
+    <script>
+        // Function to fetch Slack messages from the server
+        async function fetchSlackMessages() {
+            try {
+                const response = await fetch('/get-slack-messages');
+                if (response.ok) {
+                    const messages = await response.json();
+                    // Display the messages in the text area
+                    document.getElementById('slack-messages').value = JSON.stringify(messages, null, 2);
+                } else {
+                    console.error('Failed to fetch Slack messages');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Slack Message Viewer</h1>
+    <button onclick="fetchSlackMessages()">Fetch Slack Messages</button>
+    <br><br>
+    <!-- Text area to display the messages -->
+    <textarea id="slack-messages" rows="10" cols="50" readonly></textarea>
+</body>
+</html>
