@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Slack Data Fetcher</title>
+    <title>Slack Data Fetcher</title> 
     <script>
         // Function to fetch Slack messages from the server
         async function fetchSlackMessages() {
@@ -19,13 +19,88 @@
                 console.error('Error:', error);
             }
         }
+
+        // Function to fetch Slack messages from the server
+        async function fetchChannelsList() {
+            try {
+                const response = await fetch('/get-all-channels');
+                if (response.ok) {
+                    const messages = await response.json();
+                    // Display the messages in the text area
+                    document.getElementById('slack-messages').value = JSON.stringify(messages, null, 2);
+                } else {
+                    console.error('Failed to fetch Slack messages');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+    async function searchQuery() {
+            let channel = document.getElementById('channel').value;
+            let afterDate = document.getElementById('afterDate').value;
+            let beforeDate = document.getElementById('beforeDate').value;
+
+            if (!channel) {
+                channel = 'ALL';
+            }
+            if (!afterDate) {
+                afterDate = '1/1/1';
+            }
+            if (!beforeDate) {
+                beforeDate = '3000/12/31';
+            }
+
+            const searchParams = {
+                channel: channel,
+                after: afterDate,
+                before: beforeDate,
+            };
+            console.log(searchParams);
+            if (afterDate && beforeDate) {
+                // ここで、指定された期間を使用して検索機能を実行します
+                // 例えば、検索結果をフィルタリングするAPIを呼び出すなど
+                const response = await fetch('/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(searchParams)
+                });
+
+            } else {
+                alert('Make sure to input both starting and ending dates');
+            }
+    }
+
+    
     </script>
+
+    
 </head>
 <body>
     <h1>Slack Message Viewer</h1>
     <button onclick="fetchSlackMessages()">Fetch Slack Messages</button>
+    <button onclick="fetchChannelsList()">Fetch Channels List</button>
     <br><br>
     <!-- Text area to display the messages -->
     <textarea id="slack-messages" rows="10" cols="50" readonly></textarea>
+    <h1>Search messages</h1>
+    <h2>Specify the channel to search</h2>
+
+    <label for="channel">Channel (omit for all channels)</label>
+    <input type="channel" id="channel" name="channel">
+
+    <h2>Specify the search period</h2>
+
+    <label for="afterDate">After:</label>
+    <input type="date" id="afterDate" name="afterDate" required>
+    <br>
+    <label for="beforeDate">Before:</label>
+    <input type="date" id="beforeDate" name="beforeDate" required>
+    <br>
+    <button onclick="searchQuery()">SEARCH</button>
+
+
 </body>
 </html>

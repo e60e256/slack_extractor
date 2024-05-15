@@ -113,9 +113,11 @@ async function getSlackMessages() {
             }
             
         }
+        
         console.log(historyAll);
-
         allConversationsDict[channel["id"]] = historyAll;
+
+
     }
     // const jsonString = JSON.stringify(allConversationsDict);
     // fs.writeFile("saved_messages/output.json", jsonString, err => {
