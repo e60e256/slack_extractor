@@ -1,5 +1,16 @@
 {
+  "name": "slack_extractor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "pg": "^8.11.5",
     "@slack/bolt": "^3.17.1"
   }
 }
