@@ -35,8 +35,9 @@ POSTクエリで、指定された条件でデータベースから取得する
 ## データベースの役割
 
 データベース構造:
-- メッセージ名データベース: [message_id (キー), channel_name, user, type, ts, thread_ts, text]
-- チャンネル名データベース: [channel_id (キー), channel_name, purpose_value]
+- メッセージ名データベース: [message_id (キー), channel_name, username, type, ts, thread_ts, text]
+- チャンネル名データベース: [channel_name (キー), channel_alias, purpose_value]
+- ユーザ名データベース: [username, user_alias, real_name]
 
 更新時:
 - 新しく来たデータを1件1件データベースに書き込む。既にデータがある場合でも更新する

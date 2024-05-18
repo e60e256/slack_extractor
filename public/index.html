@@ -23,7 +23,7 @@
         // Function to fetch Slack messages from the server
         async function fetchChannelsList() {
             try {
-                const response = await fetch('/get-all-channels');
+                const response = await fetch('/get-all-channels2');
                 if (response.ok) {
                     const messages = await response.json();
                     // Display the messages in the text area

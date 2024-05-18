@@ -8,6 +8,20 @@ const client = new WebClient(process.env.API_KEY, {
   //logLevel: LogLevel.DEBUG
 });
 
+
+async function obtainAllUsers() {
+    try {
+      // Call the conversations.list method using the WebClient
+      const result = await client.users.list();
+  
+      // saveConversations(result.channels);
+      return result;
+    }
+    catch (error) {
+      console.error(error);
+    }
+  }
+
 // You probably want to use a database to store any conversations information ;)
 async function obtainConversationStore() {
   try {
@@ -114,7 +128,7 @@ async function getSlackMessages() {
             
         }
         
-        console.log(historyAll);
+        //console.log(historyAll);
         allConversationsDict[channel["id"]] = historyAll;
 
 
@@ -141,4 +155,5 @@ if (require.main === module) {
 
 module.exports = {
     getSlackMessages,
+    obtainAllUsers,
 };
