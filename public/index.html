@@ -10,11 +10,47 @@
 
 <body>
     <h1>Slack Message Viewer</h1>
+    <h2>Update database</h2>
+    
+    <button onclick="updateDatabase()">Update database</button>
 
-    <br><br>
-    <!-- Text area to display the messages -->
-    <textarea id="slack-messages" rows="10" cols="50" readonly></textarea>
+    <h2>Get channels/messages</h2>
+    <button onclick="fetchChannelsList()">Fetch Channels List</button>
+    <button onclick="fetchSlackMessages()">Fetch ALL Slack Messages</button>
 
+    <h2>Search messages</h2>
+    <h3>Specify the channel to search</h3>
+
+    <label for="channel">Channel (omit for all channels)</label>
+    <input type="channel" id="channel" name="channel">
+
+    <h3>Specify the search period</h3>
+
+    <label for="afterDate">After:</label>
+    <input type="date" id="afterDate" name="afterDate" required>
+    <br>
+    <label for="beforeDate">Before:</label>
+    <input type="date" id="beforeDate" name="beforeDate" required>
+    <br>
+    <button onclick="searchQuery()">SEARCH</button>
+
+
+    <h3>Channels list</h3>
+    <div class="table-container2">
+        <table id="messageTable2">
+            <thead>
+                <tr>
+                    <th>Channel ID</th>
+                    <th>Channel Alias</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be appended here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Messages</h3>
     <div class="table-container">
         <table id="messageTable">
             <thead>
@@ -31,25 +67,10 @@
         </table>
     </div>
 
-    <h1>Obtain All:</h1>
-    <button onclick="fetchSlackMessages()">Fetch Slack Messages</button>
-    <button onclick="fetchChannelsList()">Fetch Channels List</button>
-    
-    <h1>Search messages</h1>
-    <h2>Specify the channel to search</h2>
+    <h3>Response raw JSON view</h3>
+    <!-- Text area to display the messages -->
+    <textarea id="slack-messages" rows="4" cols="50" readonly></textarea>
 
-    <label for="channel">Channel (omit for all channels)</label>
-    <input type="channel" id="channel" name="channel">
-
-    <h2>Specify the search period</h2>
-
-    <label for="afterDate">After:</label>
-    <input type="date" id="afterDate" name="afterDate" required>
-    <br>
-    <label for="beforeDate">Before:</label>
-    <input type="date" id="beforeDate" name="beforeDate" required>
-    <br>
-    <button onclick="searchQuery()">SEARCH</button>
 
     <script src="helper.js"></script>
 

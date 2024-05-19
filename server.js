@@ -4,50 +4,63 @@ const PORT = 3000;
 
 const slackAPI = require('./src/obtain_messages.js');
 const utils = require('./src/utils.js');
-var slackMessages = {};
-
 
 const { Client } = require('pg');
-
-
-  
-
-
 
 // Serve the HTML page
 app.use(express.static('public')); // required to parse JSON object sent from the client
 app.use(express.json());
 
 // Endpoint to get Slack messages (dummy data for now)
-app.get('/get-slack-messages', async (req, res) => {
-    // Dummy Slack messages data
-    try {
-        slackMessages = await slackAPI.getSlackMessages();
-        res.json(slackMessages);  // Return the data as JSON
-    } catch (err) {
-        res.status(500).send("Failure");
-    }
+// app.get('/get-slack-messages', async (req, res) => {
+//     // Dummy Slack messages data
+//     try {
+//         slackMessages = await slackAPI.getSlackMessages();
+//         res.json(slackMessages);  // Return the data as JSON
+//     } catch (err) {
+//         res.status(500).send("Failure");
+//     }
     
-});
+// });
+
+// app.get('/get-all-channels', async (req, res) => {
+//     // Dummy Slack messages data
+//     try {
+//         //console.log(slackMessages);
+//         let channelsList = utils.getAllChannelsFromJSON(slackMessages);
+//         res.json(channelsList);  // Return the data as JSON
+//     } catch (err) {
+//         res.status(500).send("Failure");
+//     }
+    
+// });
+
+// app.get('/get-channels-messages', async (req, res) => {
+//     // Dummy Slack messages data
+//     try {
+//         //console.log(slackMessages);
+//         let channelsList = utils.getAllChannelsFromJSON(slackMessages);
+//         res.json(channelsList);  // Return the data as JSON
+//     } catch (err) {
+//         res.status(500).send("Failure");
+//     }
+    
+// });
 
 app.get('/get-all-channels', async (req, res) => {
     // Dummy Slack messages data
     try {
         //console.log(slackMessages);
-        let channelsList = utils.getAllChannelsFromJSON(slackMessages);
-        res.json(channelsList);  // Return the data as JSON
-    } catch (err) {
-        res.status(500).send("Failure");
-    }
-    
-});
-
-app.get('/get-channels-messages', async (req, res) => {
-    // Dummy Slack messages data
-    try {
-        //console.log(slackMessages);
-        let channelsList = utils.getAllChannelsFromJSON(slackMessages);
-        res.json(channelsList);  // Return the data as JSON
+        const client = new Client({
+            connectionString: process.env.DATABASE_URL,
+        });
+        await client.connect();
+        console.log('Connected to Postgres'); // Log message after successful connection
+        let insertQuery = `SELECT * FROM slackdata.allchannels`;
+        const res3 = await client.query(insertQuery);
+        console.log(res3);
+        await client.end();
+        res.json(res3);  // Return the data as JSON
     } catch (err) {
         res.status(500).send("Failure");
     }
@@ -230,7 +243,7 @@ app.get('/update-users', async (req, res) => {
 app.get('/update-database', async (req, res) => {
     // Dummy Slack messages data
     try {
-        slackMessages = await slackAPI.getSlackMessages();
+        const slackMessages = await slackAPI.getSlackMessages();
         // Update database based on the JSON files obtained, async
         // 環境変数から接続情報を取得
         const client = new Client({

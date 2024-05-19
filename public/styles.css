@@ -1,6 +1,15 @@
 .table-container {
     width: 100%;
-    max-height: 400px;
+    max-height: 500px;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.table-container2 {
+    width: 100%;
+    max-height: 200px;
     overflow-x: auto;
     overflow-y: auto;
     border: 1px solid #ccc;
@@ -18,4 +27,8 @@ th, td {
 th {
     background-color: #006699;
     color: white;
+}
+
+body {
+    background-color: #f1dcea;
 }

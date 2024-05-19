@@ -27,12 +27,42 @@ async function fetchChannelsList() {
             const messages = await response.json();
             // Display the messages in the text area
             document.getElementById('slack-messages').value = JSON.stringify(messages, null, 2);
+            populateTableChannels(messages["rows"]);
         } else {
             console.error('Failed to fetch Slack messages');
         }
     } catch (error) {
         console.error('Error:', error);
     }
+}
+
+// Function to fetch Slack messages from the server
+async function updateDatabase() {
+    try {
+        const response = await fetch('/update-database');
+        if (response.ok) {
+            const messages = await response.json();
+            console.log("Successfully updated channels/message database");
+        } else {
+            console.error('Failed to update channels/message database');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+
+    try {
+        const response = await fetch('/update-users');
+        if (response.ok) {
+            const messages = await response.json();
+            console.log("Successfully updated user database");
+        } else {
+            console.error('Failed to update user database');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+
+    alert("Finished Updating database");
 }
 
 async function searchQuery() {
@@ -98,6 +128,15 @@ function formatTimestamp(ts) {
 
 // Update the table
 function populateTable(data) {
+    const thead = document.querySelector('#messageTable thead');
+    thead.innerHTML = `    
+    <tr>
+    <th>TIME</th>
+    <th>Channel</th>
+    <th>From user</th>
+    <th>Text</th>
+    </tr>`;
+
     const tbody = document.querySelector('#messageTable tbody');
     tbody.innerHTML = '';
 
@@ -124,4 +163,29 @@ function populateTable(data) {
     });
 }
 
+function populateTableChannels(data) {
+    const thead = document.querySelector('#messageTable2 thead');
+    thead.innerHTML = `    
+    <tr>
+    <th>Channel ID</th>
+    <th>Channel Alias</th>
+    </tr>`;
 
+    const tbody = document.querySelector('#messageTable2 tbody');
+    tbody.innerHTML = '';
+    console.log(data);
+    data.forEach(row => {
+        console.log(row);
+        const tr = document.createElement('tr');
+
+        const tdTime = document.createElement('td');
+        tdTime.textContent = row["channel_id"];
+        tr.appendChild(tdTime);
+
+        const tdChannel = document.createElement('td');
+        tdChannel.textContent = row["channel_alias"];
+        tr.appendChild(tdChannel);
+
+        tbody.appendChild(tr);
+    });
+}
