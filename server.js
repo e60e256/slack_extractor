@@ -11,42 +11,6 @@ const { Client } = require('pg');
 app.use(express.static('public')); // required to parse JSON object sent from the client
 app.use(express.json());
 
-// Endpoint to get Slack messages (dummy data for now)
-// app.get('/get-slack-messages', async (req, res) => {
-//     // Dummy Slack messages data
-//     try {
-//         slackMessages = await slackAPI.getSlackMessages();
-//         res.json(slackMessages);  // Return the data as JSON
-//     } catch (err) {
-//         res.status(500).send("Failure");
-//     }
-    
-// });
-
-// app.get('/get-all-channels', async (req, res) => {
-//     // Dummy Slack messages data
-//     try {
-//         //console.log(slackMessages);
-//         let channelsList = utils.getAllChannelsFromJSON(slackMessages);
-//         res.json(channelsList);  // Return the data as JSON
-//     } catch (err) {
-//         res.status(500).send("Failure");
-//     }
-    
-// });
-
-// app.get('/get-channels-messages', async (req, res) => {
-//     // Dummy Slack messages data
-//     try {
-//         //console.log(slackMessages);
-//         let channelsList = utils.getAllChannelsFromJSON(slackMessages);
-//         res.json(channelsList);  // Return the data as JSON
-//     } catch (err) {
-//         res.status(500).send("Failure");
-//     }
-    
-// });
-
 app.get('/get-all-channels', async (req, res) => {
     // Dummy Slack messages data
     try {
@@ -67,28 +31,7 @@ app.get('/get-all-channels', async (req, res) => {
     
 });
 
-
 // Obtain all messages from database in JSON
-app.get('/get-channels-messages2', async (req, res) => {
-    // Dummy Slack messages data
-    try {
-        const client = new Client({
-            connectionString: process.env.DATABASE_URL,
-        });
-        await client.connect();
-        console.log('Connected to Postgres'); // Log message after successful connection
-        let insertQuery = `SELECT * FROM slackdata.allmessages`;
-        const res3 = await client.query(insertQuery);
-        console.log(res3);
-        await client.end();
-
-        res.json(res3);  // Return the data as JSON
-    } catch (err) {
-        res.status(500).send("Failure");
-    }
-    
-});
-
 // ユーザデータベース内に入っているデータを、チャンネルデータベースに返して表示する
 app.get('/get-channels-messages3', async (req, res) => {
     // Dummy Slack messages data
@@ -210,16 +153,16 @@ app.get('/update-users', async (req, res) => {
         console.log(res2);
 
         // Obtain all users and add to the database
-        //const usersList = utils.getAllUsersFromJSON(slackUsers);
+        let data = utils.getAllUsersFromJSON(slackUsers);
         
-        let data = [];
-        for (let j = 0; j < slackUsers["members"].length; j++) {
-            let messageObject = slackUsers["members"][j];
-            let user = messageObject["id"];
-            let userAlias = messageObject["name"];
-            let realName = messageObject["real_name"];
-            data.push(`('${user}', '${userAlias}', '${realName}')`);
-        }
+        // let data = [];
+        // for (let j = 0; j < slackUsers["members"].length; j++) {
+        //     let messageObject = slackUsers["members"][j];
+        //     let user = messageObject["id"];
+        //     let userAlias = messageObject["name"];
+        //     let realName = messageObject["real_name"];
+        //     data.push(`('${user}', '${userAlias}', '${realName}')`);
+        // }
         
         let insertQuery = `
             INSERT INTO slackdata.allusers (username, user_alias, real_name)

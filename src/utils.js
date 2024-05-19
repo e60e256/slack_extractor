@@ -16,13 +16,15 @@ function getAllChannelsFromJSON(slackMessages) {
 
 
 function getAllUsersFromJSON(slackUsers) {
-    let membersJSON = slackUsers["members"];
-    console.log(membersJSON);
-    let answer = [];
-    for (let i=0; i<membersJSON.length; i++) {
-        answer.push([membersJSON[i]["id"], membersJSON[i]["name"], membersJSON[i]["real_name"]]);
+    let data = [];
+    for (let j = 0; j < slackUsers["members"].length; j++) {
+        let messageObject = slackUsers["members"][j];
+        let user = messageObject["id"];
+        let userAlias = messageObject["name"];
+        let realName = messageObject["real_name"];
+        data.push(`('${user}', '${userAlias}', '${realName}')`);
     }
-    return answer;
+    return data;
 }
 
 

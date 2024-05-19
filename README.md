@@ -1,43 +1,123 @@
 # Slack Extractor
 Extract slack messages from a server on demand.
 
+## 必要条件
+- Docker 24.0 以降
+- node.js 20.0 以降
 
-## フロントの表示
-それぞれのクエリに対応する簡素なボタンを設置し、押したら発令するようにする
-結果はメッセージボックスに JSON をそのままの形で表示する
+## 使用開始方法
+1. このレポジトリをクローンして、ルートディレクトリに移動する。
+```bash
+git clone git@github.com:e60e256/slack_extractor.git
+cd slack_extractor
+```
 
-## サーバの役割
+2. `.env` ファイルを作成し、次を入力する。
+
+```
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=mypassword
+POSTGRES_DB=mydatabase
+API_KEY=xoxp-your-slack-api-key-here
+```
+
+3. docker compose up すると起動する。
+その状態で ウェブブラウザから localhost:3000 にアクセスすると画面が開く。
+
+```bash
+docker compose up --build
+```
+
+4. 起動したら、まず最初に「Update database」を押す。これをしないとテーブルが作成されない。
+
+5. 設定完了。なお、データベースは docker volume として永続化されているので、
+docker compose down しても消えない。コマンドの詳細は「サーバのエンドポイント」の章を参照。
+
+### 停止方法
+
+```bash
+docker compose stop # 停止
+docker compose start # 再開
+```
+
+### データベースボリュームの削除
+- これを行うと保存された全チャンネル・メッセージデータが消去されるので注意
+
+```bash
+docker volume ls # slack_extractor_db-data のようなボリュームをみつける
+docker volume rm docker-volume-name-here_db-data
+```
+
+## サーバのエンドポイント
+サーバの役割は以下の通り:
 - APIキーを持ち、特定ワークスペースからメッセージを読み、データベースに渡す
 - データベースからの情報をクライアントに渡す
 
 ### /update-database
-データベースの中身を更新するクエリ
-- 時間制限 1回/1分
+データベースの中身 (チャンネル名, メッセージ) を更新するクエリ
+
+### /update-users
+ユーザ名のデータベースを更新するクエリ
 
 ### /get-all-channels
-全チャンネル名とその詳細を表示するクエリ
-- 時間制限 1回/1分
+全チャンネル名とそのIDを表示するクエリ。 
+`Fetch Channels List` で呼び出せる
 
-### /get-all-messages
-全メッセージデータベースを取得するクエリ
-- 時間制限 1回/1分
+### /get-all-messages3
+全メッセージを取得するクエリ
+`Fetch ALL Slack Messages` で呼び出せる
 
 ### /search
-POSTクエリで、指定された条件でデータベースから取得する
-- 検索できる内容
-    - チャンネル
-    - before/after
-    - LIMIT
-    - 指定語句
-    - 発信者
-- 時間制限 1回/1分
+指定されたメッセージを取得するクエリ。
+POSTリクエストで取得する。
+`SEARCH` を押すと呼び出される
+
+入れられるパラメータは以下の通り
+`channel`: 指定されたチャンネル名からのみのメッセージを取得する。「ALL」を指定すると全チャンネルから取得する。
+`after`: `yyyy-mm-dd` の形で取得し、この日付以降のメッセージのみを取得する
+`before`: `yyyy-mm-dd` の形で取得し、この日付以前のメッセージのみを取得する
+
+パラメータ例
+```json
+{
+    "channel": "general",
+    "after": "2024-05-01",
+    "before": "2024-05-20"
+}
+```
 
 ## データベースの役割
 
 データベース構造:
-- メッセージ名データベース: [message_id (キー), channel_name, username, type, ts, thread_ts, text]
-- チャンネル名データベース: [channel_name (キー), channel_alias, purpose_value]
+- メッセージ名データベース: 
+```sql
+slackdata.allmessages (
+            ts NUMERIC(30, 6) PRIMARY KEY,
+            client_msg_id VARCHAR(50),
+            channel_id VARCHAR(30),
+            username VARCHAR(100),
+            type VARCHAR(100),
+            thread_ts VARCHAR(100),
+            text VARCHAR(32767)
+        )
+```
+
+- チャンネル名データベース:
+```sql
+slackdata.allchannels (
+            channel_id VARCHAR(30) PRIMARY KEY,
+            channel_alias VARCHAR(300)
+        )
+```
+
 - ユーザ名データベース: [username, user_alias, real_name]
+```sql
+slackdata.allusers (
+            username VARCHAR(30) PRIMARY KEY,
+            user_alias VARCHAR(300),
+            real_name VARCHAR(300)
+        )
+```
 
 更新時:
 - 新しく来たデータを1件1件データベースに書き込む。既にデータがある場合でも更新する
@@ -46,7 +126,6 @@ POSTクエリで、指定された条件でデータベースから取得する
 抽出操作:
 - 特定のチャンネルのメッセージを全て抽出
 - 特定時間帯のメッセージを全て抽出
-- 語彙検索 (SQLインジェクション避けも実施)
 
 データの保存:
 - 展開を容易にするため Docker image で構築したい (Postgres 16 bookworm)
