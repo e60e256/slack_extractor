@@ -1,5 +1,6 @@
 # Slack Extractor
-Extract slack messages from a server on demand.
+Slack のメッセージをAPI経由でデータベースに蓄えて、表示する機能を持つサービス。
+無料版で3か月制限を乗り越えたいために開発した。
 
 ## 必要条件
 - Docker 24.0 以降
@@ -127,28 +128,4 @@ slackdata.allusers (
 - 特定のチャンネルのメッセージを全て抽出
 - 特定時間帯のメッセージを全て抽出
 
-データの保存:
-- 展開を容易にするため Docker image で構築したい (Postgres 16 bookworm)
-- しかし、プロセスが切れても永続化したい 
-    - local にデータを保存したい
-    - データベースファイルを作成する
 
-
-## Docker 化
-- 以下のコンテナを用意
-    - Node.js を実行するサーバ用コンテナ (クライアント用サイトも提供)
-    - Postgres でデータを保存するデータベース用コンテナ
-
-## 知りたいこと・メモ
-- Docker のネットワーク周り
-    - Node.js において、Postgres にアクセスする方法
-        - 特に、Dockerコンテナとして別のIPaddrに存在する場合はどうするか？
-        - Postgres の開放ポート番号
-- ローカルにデータベースファイルを保存する方法
-- Node.js から Postgres の内容を書き換える方法
-- Postgres にパスワードを設定しよう (外部から勝手に書き換えられたくない)
-    - サーバマシンだけがわかるようにする
-        - どうやってサーバ起動時に環境変数 (Slack APIキー, Postgres ID/passwd) をバレないように指定する？
-
-
-Docker compose up したら、データベースを読み込み。なければ 新しく CREATE する
