@@ -15,7 +15,8 @@ const { Client } = require('pg');
 
 
 // Serve the HTML page
-app.use(express.static('public'));
+app.use(express.static('public')); // required to parse JSON object sent from the client
+app.use(express.json());
 
 // Endpoint to get Slack messages (dummy data for now)
 app.get('/get-slack-messages', async (req, res) => {
@@ -108,6 +109,67 @@ app.get('/get-channels-messages3', async (req, res) => {
     }
     
 });
+
+// 検索機能
+app.post('/search', async (req, res) => {
+    // Dummy Slack messages data
+    try {
+        const client = new Client({
+            connectionString: process.env.DATABASE_URL,
+        });
+        await client.connect();
+        console.log('Connected to Postgres'); // Log message after successful connection
+        
+        let insertQuery = `
+        SELECT
+        m.ts,
+        c.channel_alias AS CHANNEL,
+        u.user_alias AS USER_ALIAS,
+        m.type,
+        m.thread_ts,
+        m.text
+        FROM
+            slackdata.allmessages m
+        JOIN
+            slackdata.allchannels c ON m.channel_id = c.channel_id
+        JOIN
+            slackdata.allusers u ON m.username = u.username`;
+        
+        // Add parameters based on the request
+        let params = [];
+        //console.log(req);
+        //console.log(req.body);
+        let after = utils.convertToUnixTimestamp(req.body["after"]);
+        let before = utils.convertToUnixTimestamp(req.body["before"]);
+        if (req.body["channel"] == "ALL") {
+            insertQuery += `
+                            WHERE 
+                            m.ts >= $1 AND m.ts <= $2
+                            `;
+            params = [after, before];
+        } else {
+            insertQuery += `
+                            WHERE 
+                            m.ts >= $1 AND m.ts <= $2 AND c.channel_alias = $3
+                            `;
+            params = [after, before, req.body["channel"]];
+        }
+        console.log(insertQuery);
+        console.log(params);
+        const res3 = await client.query(insertQuery, params);
+        console.log(res3);
+        await client.end();
+        res.json(res3);  // Return the data as JSON
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("Failure");
+    }
+    
+});
+
+
+
+
 
 // Update the user's database
 app.get('/update-users', async (req, res) => {
